@@ -43,7 +43,7 @@ body {
 
 header {
   height: 70px;
-  width: 91vw;
+  width: 100%;
 
   padding: 0 30px;
   background-color: var(--light-themecolor);
@@ -113,9 +113,6 @@ header {
 }
 
 
-/*---------------------------------------------------------------------------------*/
-
-/* HOVER section-----*/
 .logo:hover{
   color: #9333EA;
   scale: 1.1;
@@ -135,7 +132,6 @@ header {
 }
 
 
-/*---------------------------------------------------------------------------------*/
 .error{
   display: flex;
   background-color: red;
@@ -161,7 +157,6 @@ header {
 }
 
 
-/*LOGIN Section*/
 
 .logincontainer{
   height: 80vh;
@@ -535,7 +530,7 @@ header {
 }
 
 .main-content {
-  margin: 1% 0% 0% 2%;
+  margin: 1% 0% 2% 2%;
   width: 100%;
   display: flex;
   flex-direction: row;

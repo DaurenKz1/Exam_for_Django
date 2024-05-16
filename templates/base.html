@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">  
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
     <script src="{% static '/js/script.js' %}"></script>
     {% block title %}
     
@@ -31,6 +33,29 @@
         
     {% endblock body %}
     
+ <div class="footer">
+      <div class="contain">
+          <div class="col social">
+        <h1>Главная</h1>
+        <ul>
+            <a href="/"><li class="active">Лист задач</li></a>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Компания</h1>
+        <ul>
+           <a href="https://github.com/DaurenKz1/Exam_for_Django" target="_blank"><li>Проект</li></a>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Поддержка</h1>
+        <ul>
+            <a href="/admin/" target="_blank"><li>Админ</li></a>
+        </ul>
+      </div>
 
+    <div class="clearfix"></div>
+    </div>
+    </div>
 </body>
 </html>
