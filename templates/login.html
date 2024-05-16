@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block title %}
+    <title>TodoList-LoginPage</title>
+{% endblock title %}
+
+
+{% block body %}
+
+{% if error != None %}
+    <div id="noti "class="error" style="display: flex;" >
+    <p>{{ error }}</p>
+    <img src='{% static "/images/reject.png" %}' height="20" width="20" alt="Reject">
+    </div>
+{% endif %}
+
+<section class="logincontainer">
+    <h1 class="bigheading">TodoList</h1>
+        <div class="loginbox">
+            <h2>Войти</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="username">Имя пользоватедя</label>
+                <input id="username" type="text" name="username" placeholder="Введите имя пользователя" required maxlength="30">
+                <label for="password">Пароль</label>
+                <input dd="password" type="password" name="password" placeholder="Введите пароль" required minlength="6" maxlength="30">
+                
+                <a lass="info" href="{% url 'resetPassword' %}">Забыли пароль?</a>
+                <button type="submit">Войти</button>
+                
+                <p class="info">Нет аккаунта? <a href='{% url "signUp" %}' class="active">Зарегистрироваться</a></p>
+            </form>
+        </div>
+</section>
+{% endblock body %}

@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block title %}
+<title>TodoList-SignUp Page</title>
+{% endblock title %}
+
+{% block body %}
+
+{% if error != None  and error == "Аккаунт успешно создан!" %}
+<div id="noti" class="error" style="display: flex; background-color: green;">
+    <p>{{ error }}</p>
+    <img id='dismiss'src="/static/images/reject.png" alt="Reject">
+</div>  
+{% else %}
+    {% if error != None %}
+    <div id="noti" class="error" style="display: flex; background-color: red;">
+        <p>{{ error }}</p>
+        <img id='dismiss'src="/static/images/reject.png" alt="Reject">
+    </div>  
+    {% endif %}
+{% endif %}
+    <section class="signupcontainer">
+        <h1 class="bigheading">TodoList</h1>
+        <div class="signupbox">
+            <h2>Зарегистрироваться</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="username">Имя пользователя</label>
+                <input id="username" type="text" name="username" placeholder="Введите имя пользователя" required maxlength="30">
+
+
+                <label for="email">Почта</label>
+                <input id="email" type="email" name="email" placeholder="Введите почту" required>
+
+
+                <label for="password">Пароль</label>
+                <input id="password" type="password" name="password" placeholder="Введите пароль" required maxlength="30" minlength="6">
+
+                <label for="confirmpassword">Потвердите пароль</label>
+                <input id="confirmpassword" type="password" name="confirmpassword" placeholder="Потвердите пароль" required maxlength="30" minlength="6">
+                <button type="submit">Зарегистрироваться</button>
+                <p class="info">Есть аккаунт? <a href="{% url 'login' %}" class="active">Войти</a></p>
+        </div>
+    </section>
+{% endblock body %}
